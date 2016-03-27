@@ -9,7 +9,7 @@ describe("ParrotNavigation", function(){
 
 	it("ParrotDown", function(){
 		manual_menu('u');
-		expect(current_state).toEqual('w');
+		expect(current_state).toEqual('u');
 	});
 
 	it("Parrot stops", function(){
