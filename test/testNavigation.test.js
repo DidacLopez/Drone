@@ -81,7 +81,7 @@ describe("Verify the automation drone moves correctly", function (){
 		setTimeout(function (){
 			expect(drone._pcmd.flag).toEqual(1);
 			expect(drone._pcmd.pitch).toEqual(0);
-			expect(drone._pcmd.roll).toEqual(0);
+			expect(drone._pcmd.roll).toEqual(1);
 			expect(drone._pcmd.yaw).toEqual(0);
 			expect(drone._pcmd.gaz).toEqual(0);
 		})

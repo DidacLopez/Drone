@@ -86,6 +86,7 @@ function manual_menu(key)
 
 function ERNIMove(action){
 	var speed = 20;
+	drone.boolSend = true;
 	var pcmd={   
 					flag: 0,
 				    roll: 0,
@@ -124,10 +125,10 @@ function ERNIMove(action){
 			pcmd.yaw = speed * 2;
 		break;
 		default:
-
+			drone.boolSend = false;
 		break;
 	}
-	//console.log(action);
+	console.log(drone.boolSend);
 	drone._pcmd = pcmd;
 	drone.PilotingSettings.absolutControl(false);
 	drone.generateAllStates();
@@ -171,7 +172,7 @@ function ERNIMovePerInterval(action, startTime, intervalTime){
 	setTimeout(function(action,intervalTime){
 		ERNIMoveWithTime(action, intervalTime);
 	},startTime, action, intervalTime);
-	return startTime + intervalTime + 500;
+	return startTime + intervalTime + 1500;
 }
 
 
@@ -180,7 +181,7 @@ function ERNIMovePerInterval(action, startTime, intervalTime){
 function automatic_mode2()
 {
 	var timeline = 1000;
-		console.log(timeline);
+
 	timeline = ERNIMovePerInterval("right",timeline,2000);
 
 	timeline = ERNIMovePerInterval("forward",timeline,2000);
@@ -195,9 +196,27 @@ function automatic_mode2()
 
 function automatic_mode()
 {
+	var timeline = 1000;
+
+	timeline = ERNIMovePerInterval("right",timeline,2000);
+	timeline = ERNIMovePerInterval("clockwise",timeline,1700);
+	timeline = ERNIMovePerInterval("right",timeline,2000);
+	timeline = ERNIMovePerInterval("clockwise",timeline,1700);
+	timeline = ERNIMovePerInterval("right",timeline,2000);
+	timeline = ERNIMovePerInterval("clockwise",timeline,1700);
+	timeline = ERNIMovePerInterval("right",timeline,2000);
+	timeline = ERNIMovePerInterval("clockwise",timeline,1700);
+
+	return 0;
+}
+
+
+
+function automatic_mode3()
+{
 	var switchAction = true
 	var timer = setInterval( function(){
-		if(switchAction) ERNIMoveWithTime("right",400);
+		if(switchAction) ERNIMoveWithTime("right",300);
 		else ERNIMoveWithTime("clockwise",800);
 		switchAction = !switchAction
 	}, 1000);
