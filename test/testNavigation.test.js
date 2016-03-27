@@ -1,6 +1,4 @@
-
-
-describe("ParrotNavigation", function(){
+/*describe("ParrotNavigation", function(){
 
 	it("ParrotUp", function(){
 		manual_menu('w');
@@ -18,3 +16,77 @@ describe("ParrotNavigation", function(){
 	})
 
 })
+*/
+describe("Start the drone", function (){
+	it("Connection established", function (){
+		expect(drone._events.connection).toEqual(true);
+	});
+	it("Check absolut control is false", function (){
+		expect(drone._settings.absolutControl).toEqual(false)
+	})
+});
+
+describe("Verify the drone state before input", function (){
+	it("verify the state is 3 after send 'a' char", function (){
+		var current_state = manual_menu("a");
+		expect(current_state).toEqual(3);
+	});
+
+	it("verify the state is 3 after send 'w' char", function (){
+		var current_state = manual_menu("a");
+		expect(current_state).toEqual(3);
+	});
+	it("verify the state is 3 after send 's' char", function (){
+		var current_state = manual_menu("s");
+		expect(current_state).toEqual(3);
+	});
+		it("verify the state is 0 after send 'escape' key", function (){
+		var current_state = manual_menu("escape");
+		expect(current_state).toEqual(0);
+	});
+		//TO DO: Code coverage, add all cases.
+});
+
+describe("Verify the drone movements", function (){
+	it("verify it's moving to the left", function (){
+		ERNIMove("left");
+		expect(drone._pcmd.flag).toEqual(1);
+		expect(drone._pcmd.pitch).toEqual(0);
+		expect(drone._pcmd.roll).toBeLessThan(0);
+		expect(drone._pcmd.yaw).toEqual(0);
+		expect(drone._pcmd.gaz).toEqual(0);
+	});
+
+	it("verify it's moving to the right", function (){
+		ERNIMove("right");
+		expect(drone._pcmd.flag).toEqual(1);
+		expect(drone._pcmd.pitch).toEqual(0);
+		expect(drone._pcmd.roll).toBeGreaterThan(0);
+		expect(drone._pcmd.yaw).toEqual(0);
+		expect(drone._pcmd.gaz).toEqual(0);
+	});
+
+	//TODO the rest of movements
+});
+
+describe("Verify the automation drone moves correctly", function (){
+	it("verify ....", function (){
+		ERNIMoveWithTime("left",2000)
+
+		expect(drone._pcmd.flag).toEqual(1);
+		expect(drone._pcmd.pitch).toEqual(0);
+		expect(drone._pcmd.roll).toBeLessThan(0);
+		expect(drone._pcmd.yaw).toEqual(0);
+		expect(drone._pcmd.gaz).toEqual(0);
+		setTimeout(function (){
+			expect(drone._pcmd.flag).toEqual(1);
+			expect(drone._pcmd.pitch).toEqual(0);
+			expect(drone._pcmd.roll).toEqual(0);
+			expect(drone._pcmd.yaw).toEqual(0);
+			expect(drone._pcmd.gaz).toEqual(0);
+		})
+	});
+
+	//TODO the rest of movements
+});
+

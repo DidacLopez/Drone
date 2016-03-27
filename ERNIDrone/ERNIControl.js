@@ -70,6 +70,7 @@ function manual_menu(key)
 			break;
 			default:
 				console.log(key + ": Key not assigned");
+				return 3;
 		}
 		return 3;
 
@@ -117,10 +118,10 @@ function ERNIMove(action){
 			pcmd.pitch = speed;
 		break;
 		case "clockwise":
-			pcmd.yaw = speed * -1;
+			pcmd.yaw = speed * -1 * 2;
 		break;
 		case "counterclockwise":
-			pcmd.yaw = speed;
+			pcmd.yaw = speed * 2;
 		break;
 		default:
 
@@ -130,6 +131,7 @@ function ERNIMove(action){
 	drone._pcmd = pcmd;
 	drone.PilotingSettings.absolutControl(false);
 	drone.generateAllStates();
+	console.log(drone._pcmd);
 }
 
 
@@ -169,34 +171,41 @@ function ERNIMovePerInterval(action, startTime, intervalTime){
 	setTimeout(function(action,intervalTime){
 		ERNIMoveWithTime(action, intervalTime);
 	},startTime, action, intervalTime);
-	return startTime + intervalTime;
+	return startTime + intervalTime + 500;
 }
 
 
 /////////////////////////////////////////////////////////////////////////
 
-function automatic_mode()
+function automatic_mode2()
 {
 	var timeline = 1000;
+		console.log(timeline);
 	timeline = ERNIMovePerInterval("right",timeline,2000);
+
 	timeline = ERNIMovePerInterval("forward",timeline,2000);
+
 	timeline = ERNIMovePerInterval("left",timeline,2000);
+
 	timeline = ERNIMovePerInterval("backward",timeline,2000);
+
+
 	return 0;
 }
 
-function automatic_mode2()
+function automatic_mode()
 {
 	var switchAction = true
 	var timer = setInterval( function(){
-		if(switchAction) ERNIMoveWithTime("right",200);
-		else ERNIMoveWithTime("counterclockwise");
+		if(switchAction) ERNIMoveWithTime("right",400);
+		else ERNIMoveWithTime("clockwise",800);
 		switchAction = !switchAction
-	}, 500);
+	}, 1000);
 
-	setTimout(function(timer){
+	/*setTimeout(function(timer){
+		console.log("end");
 		clearInterval(timer);
-	}, 5000, timer);
+	}, 8000, timer);*/
 
 	return 0;
 }

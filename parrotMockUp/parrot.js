@@ -1,8 +1,18 @@
 "use strict"
 
 var parrot = {
+	_pcmd: {},
+	_events:{},
+	_settings:{
+		absolutControl:true
+	},
+	PilotingSettings:{
+		absolutControl: function (bool) {parrot._settings.absolutControl = bool;}
+	},
+	generateAllStates: function() {return true;},
 	connect: function(callback) {
 		if (callback) {callback();}
+		this._events.connection = true;
 		return true;
 	},
 	takeOff: function() {return true;},
@@ -20,3 +30,4 @@ var bebop = {
 };
 
 //module.exports.createClient = createClient;
+//module.exports.bebop = bebop;

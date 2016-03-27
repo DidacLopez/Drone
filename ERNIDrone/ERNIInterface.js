@@ -12,7 +12,7 @@ function main_menu_console()
 
 function clean_console()
 {
-	process.stdout.write('\033c');
+	//process.stdout.write('\033c');
 }
 
 function main_menu(ch)
