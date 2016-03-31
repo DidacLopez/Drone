@@ -25,7 +25,7 @@ function manual_menu(key)
 		{
 			case "a":
 				console.log("moving left");
-				ERNIMove("left");
+				erniObject.move("left");
 				break;
 			case "d":
 				console.log("moving right");
@@ -132,6 +132,9 @@ function ERNIMove(action){
 	drone.PilotingSettings.absolutControl(false);
 	drone.generateAllStates();
 }
+
+var erniObject = {};
+erniObject.move = ERNIMove;
 
 
 function ERNITakeOff(){

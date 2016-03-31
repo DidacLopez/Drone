@@ -65,9 +65,5 @@ function menu(ch,key)
 			current_state = ERNIDrone.control.automatic_mode();
 		break;
 	}
-
-
-
-
 }
 /////////////////////////////////////////

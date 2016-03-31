@@ -128,7 +128,7 @@ function ERNIMove(action){
 			drone.boolSend = false;
 		break;
 	}
-	console.log(drone.boolSend);
+	
 	drone._pcmd = pcmd;
 	drone.PilotingSettings.absolutControl(false);
 	drone.generateAllStates();
@@ -244,3 +244,9 @@ module.exports.automatic_mode = automatic_mode;
 module.exports.ERNITakeOff = ERNITakeOff;
 module.exports.ERNILanding = ERNILanding;
 module.exports.ERNIDrone = drone;
+
+var erniObject = {
+
+}
+
+module.exports = erniObject;
