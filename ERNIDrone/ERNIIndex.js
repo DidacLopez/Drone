@@ -1,9 +1,9 @@
 var control = require('./ERNIControl');
 var interface = require('./ERNIInterface');
 
-var ernidrone = {},
+/*var ernidrone = {},
 
-ernidrone.interface = interface;
+ernidrone.interface = interface;*/
 
 
 module.exports.interface = interface;

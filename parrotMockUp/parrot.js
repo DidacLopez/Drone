@@ -2,6 +2,7 @@
 
 var parrot = {
 	_pcmd: {},
+	_pcmd_isSend: false,
 	_events:{},
 	_settings:{
 		absolutControl:true
