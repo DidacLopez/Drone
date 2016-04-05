@@ -80,10 +80,14 @@ module.exports = {
   },
   "enum": {
     read: function(buffer, index, arg) {
-      if (buffer.length - index < 4) {
+       try {
+          if (buffer.length - index < 4) {
         return arg.enum[buffer.readInt16LE(index)].name;
       }
-      return arg.enum[buffer.readInt32LE(index)].name;
+      return arg.enum[buffer.readInt32LE(index)].name; 
+      } catch(e) {
+      }
+        
     },
     length: 4
   }

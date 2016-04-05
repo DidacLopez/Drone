@@ -39,7 +39,7 @@ function menu(ch,key)
 	//handle special keys
 	var action = key ? key.name : ch;
 
-	if (current_state == 0){
+	if (current_state != 3){
 		ERNIDrone.interface.ERNICleanConsole();
 		current_state = ERNIDrone.interface.ERNIMainMenu(action);
 	}
