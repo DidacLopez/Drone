@@ -1,0 +1,73 @@
+{
+  "name": "node-bebop",
+  "version": "0.4.1",
+  "description": "Node.js JavaScript library for the Parrot Bebop",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "updateCommands": "node bin/updateCommands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hybridgroup/node-bebop.git"
+  },
+  "bin": {
+    "update-bebop-commands": "./bin/updateCommands.js"
+  },
+  "keywords": [
+    "parrot",
+    "bebop",
+    "drone"
+  ],
+  "author": {
+    "name": "The Hybrid Group",
+    "email": "cylonjs@hybridgroup.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hybridgroup/node-bebop/issues"
+  },
+  "homepage": "https://github.com/hybridgroup/node-bebop",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "grunt": "^0.4.5",
+    "grunt-eslint": "^13.0.0",
+    "grunt-simple-mocha": "^0.4.0",
+    "mocha": "^2.2.5",
+    "promise": "^7.1.1",
+    "request": "^2.69.0",
+    "sinon": "^1.14.1",
+    "xml2json": "^0.9.0"
+  },
+  "dependencies": {
+    "fluent-ffmpeg": "^2.0.1",
+    "storotype": "^0.1.17",
+    "through": "^2.3.7"
+  },
+  "gitHead": "2ca09edc82afa1a52c74ff1f12bef79712a56253",
+  "_id": "node-bebop@0.4.1",
+  "_shasum": "f555856bfc1ba1092719f5df134b5765279effa8",
+  "_from": "node-bebop@latest",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.2",
+  "_npmUser": {
+    "name": "deadprogram",
+    "email": "ron@hybridgroup.com"
+  },
+  "maintainers": [
+    {
+      "name": "deadprogram",
+      "email": "ron@hybridgroup.com"
+    }
+  ],
+  "dist": {
+    "shasum": "f555856bfc1ba1092719f5df134b5765279effa8",
+    "tarball": "http://registry.npmjs.org/node-bebop/-/node-bebop-0.4.1.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/node-bebop-0.4.1.tgz_1455412129903_0.6290094188880175"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/node-bebop/-/node-bebop-0.4.1.tgz"
+}

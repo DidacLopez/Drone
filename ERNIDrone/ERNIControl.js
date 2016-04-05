@@ -1,4 +1,4 @@
-var bebop = require('node-bebop');
+var bebop = require('../node-bebop');
 var drone = bebop.createClient();
 
 var ERNIControl = {

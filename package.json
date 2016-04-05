@@ -1,0 +1,30 @@
+{
+  "name": "erni-drone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ERNIDrone.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DidacLopez/Drone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DidacLopez/Drone/issues"
+  },
+  "homepage": "https://github.com/DidacLopez/Drone#readme",
+  "dependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.8",
+    "karma-jasmine-html-reporter": "^0.2.0",
+    "keypress": "^0.2.1"
+  }
+}
