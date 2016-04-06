@@ -44,7 +44,7 @@ var ERNIControl = {
 			break;
 			case "backward":
 				pcmd.flag = 1;
-				pcmd.pitch = speed * -1;
+				pcmd.pitch = speed * 1;
 			break;
 			case "forward":
 				pcmd.flag = 1;
@@ -107,11 +107,11 @@ var ERNIControl = {
 				break;
 				case "w":
 					console.log("moving forward");
-					this.ERNIMove("forward");
+					this.ERNIMove("backward");
 				break;
 				case "s":
 					console.log("moving back");
-					this.ERNIMove("backward");
+					this.ERNIMove("forward");
 				break;
 				case "q":
 					console.log("counter clockwise rotation");

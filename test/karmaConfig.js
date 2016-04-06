@@ -5,9 +5,6 @@ module.exports = function(config){
 			'../parrotMockUp/parrot.js',
 			'../ERNIDrone/ERNIControlToTest.js',
 			'*.js'
-		],
-		reporters:[
-			'kjhtml'
 		]
 	})
 }

@@ -152,33 +152,43 @@ var ERNIControl = {
 		}
 	},
 	ERNIAutomaticMode1:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode2:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode3:function () {
+		// TODO  - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode4:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode5:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode6:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode7:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode8:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode9:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	},
 	ERNIAutomaticMode10:function () {
+		// TODO - Create your Drone route with the framework
 		return 0;
 	}
 };
